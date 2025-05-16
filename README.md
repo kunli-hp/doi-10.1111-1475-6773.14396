@@ -4,27 +4,20 @@ Citation: Li K, Dor A. Overlapping markets and quality competition among communi
 
 The "do_files" folder contains code that both processes raw data and analyzes the data to produce figures for the paper.
 
-----------------------------------------------------------------------
---------	               			Study Data              				--------
-----------------------------------------------------------------------
 
---  Uniform Data System (UDS), 2014-2018
-	The primary data source is the Uniform Data System, an administrative dataset containing information at the community health center (CHC) level. 
-	We are not allowed to share the data files, either raw or processed, because we used a restrictive version through a data use agreement.
-	Public version of the UDS data files can be downloaded from:
-	https://data.hrsa.gov/tools/data-reporting/program-data
+--  Study Data
+    --  Uniform Data System (UDS), 2014-2018
+		The primary data source is the Uniform Data System, an administrative dataset containing information at the community health center (CHC) level. 
+		We are not allowed to share the data files, either raw or processed, because we used a restrictive version through a data use agreement.
+		Public version of the UDS data files can be downloaded from:
+		https://data.hrsa.gov/tools/data-reporting/program-data
 
---  American Community Survey (ACS), 2015-2018
-	Files downloaded from:
-	https://usa.ipums.org/usa/acs.shtml
+    --  American Community Survey (ACS), 2015-2018
+		Files downloaded from:
+		https://usa.ipums.org/usa/acs.shtml
 
 
---------------------------------------------------------------------------
---	 			Do Files				--
---------------------------------------------------------------------------
-
---  Main Analysis
-
+--  Do Files
     --  1-hhi.do
 	--  This file processes the ZIP code table of the UDS and constructs CHC-centric Herfindahl–Hirschman index (HHI).
 
