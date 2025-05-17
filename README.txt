@@ -2,7 +2,7 @@ This repository contains code for "Overlapping markets and quality competition a
 
 Citation: Li K, Dor A. Overlapping markets and quality competition among community health centers. Health Serv Res. 2024; 1-10. doi:10.1111/1475-6773.14396
 
-The "do_files" folder contains code that both processes raw data and analyzes the data to produce figures for the paper.
+This repository contains code that processes raw data and analyzes the data to produce figures and tables for the paper.
 
 
 --  Study Data
