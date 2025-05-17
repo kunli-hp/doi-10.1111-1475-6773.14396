@@ -7,7 +7,7 @@
 * ==============================================================================
 
 ****	Inputs: 1) HHI data files derived from Do File #1
-****			2) ACS files derived from Do File #4.1
+****		2) ACS files derived from Do File #4.1
 ****	Outputs: Market-level covariates (each row corresponds to a CHC-centric market)
 
 
