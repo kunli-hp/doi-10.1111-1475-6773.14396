@@ -27,7 +27,7 @@ local covariate cmi siteno mcaid_rate unins_rate zip_total_s povertyrate_market 
 local instrument lcc_frac_uninsured lcc_frac_medicaid
 
 xtivreg composite_oppwt chc_hhi monopolist `covariate' (lc_composite_oppwt = `instrument'), re
-outreg2 using "${results}/table_s10.rtf", replace dec(3) ctitle(monopolist)
+	outreg2 using "${results}/table_s10.rtf", replace dec(3) ctitle(monopolist)
 
 **	Summary stats of monopolists (Table S4)
 asdoc sum composite_oppwt screening_oppwt medication_oppwt chronic_oppwt `covariate' if monopolist == 1, stat(N mean sd) save("${results}/table_s4.doc") replace dec(2) fs(12) font(Times New Roman)
@@ -38,7 +38,7 @@ drop if competitor == 0 | chc_hhi == 1
 
 ****	Use contemporaneous competitors' quality (Table S10, Model 7)
 xtivreg composite_oppwt chc_hhi `covariate' (c_composite_oppwt = cc_frac_uninsured cc_frac_medicaid), re
-outreg2 using "${results}/table_s10.rtf", append dec(3) ctitle(Contemporaneous)
+	outreg2 using "${results}/table_s10.rtf", append dec(3) ctitle(Contemporaneous)
 
 
 ****	Main Analysis (Table 2)
@@ -84,12 +84,12 @@ preserve
 	rename zipi zipcode
 	merge m:1 zipcode year using "zip_zcta_1418.dta", keep(master match) nogen
 	destring zcta, replace
-	merge m:1 zcta using ./data/geocode_zcta.dta, keep(master match) nogen
+	merge m:1 zcta using geocode_zcta.dta, keep(master match) nogen
 	rename (intptlat intptlong zcta zipcode) (lat1 long1 zip1 zipi)
 	rename zip zipcode
 	merge m:1 zipcode year using "zip_zcta_1418.dta", keep(master match) nogen
 	destring zcta, replace
-	merge m:1 zcta using ./data/geocode_zcta.dta, keep(master match) nogen
+	merge m:1 zcta using geocode_zcta.dta, keep(master match) nogen
 	rename (intptlat intptlong zcta zipcode) (lat2 long2 zip2 zip)
 
 	geodist lat1 long1 lat2 long2, generate(dist) miles
@@ -106,7 +106,7 @@ preserve
 	local dist_p5 = r(p5)
 
 	xtivreg composite_oppwt chc_hhi `covariate' (lc_composite_oppwt = `instrument') if id_dist > `dist_p5' & id_dist != ., re
-	outreg2 using "${results}/table_s10.rtf", replace dec(3)
+		outreg2 using "${results}/table_s10.rtf", replace dec(3)
 
 restore
 
@@ -240,30 +240,30 @@ xtreg composite_oppwt c_hat2 chc_hhi `covariate' if frac_private >= `p75', re
 ****	Additional sensitivity analysis
 *	Use # of competitors (Table S10, Model 1)
 xtivreg composite_oppwt competitor `covariate' (lc_composite_oppwt = `instrument'), re
-outreg2 using "${results}/table_s10.rtf", append dec(3) ctitle(alt-competition)
+	outreg2 using "${results}/table_s10.rtf", append dec(3) ctitle(alt-competition)
 
 *	other weighting (Table S10, Model 2)
 xtivreg composite_eqwt chc_hhi `covariate' (lc_composite_eqwt = `instrument'), re
-outreg2 using "${results}/table_s10.rtf", append dec(3) ctitle(eq-weight)
+	outreg2 using "${results}/table_s10.rtf", append dec(3) ctitle(eq-weight)
 
 *	Drop HHI (Table S10, Model 5)
 xtivreg composite_oppwt `covariate' (lc_composite_oppwt = `instrument'), re
-outreg2 using "${results}/table_s10.rtf", append dec(3) ctitle(no-hhi)
+	outreg2 using "${results}/table_s10.rtf", append dec(3) ctitle(no-hhi)
 
 *	Additional control variables (Table S10, Model 6)
 xtivreg composite_oppwt chc_hhi `covariate' pct_female_market pct_under18_market pct_above64_market (lc_composite_oppwt = `instrument'), re
-outreg2 using "${results}/table_s10.rtf", append dec(3) ctitle(more-covariate)
+	outreg2 using "${results}/table_s10.rtf", append dec(3) ctitle(more-covariate)
 
 *	Alternative market definitions (Table S6)
 local covariate cmi siteno mcaid_rate_a unins_rate_a zip_total_s_a povertyrate_market_a pct_nonwhite_market_a yr3 yr4 yr5
 local instrument lcca_frac_uninsured lcca_frac_medicaid
 xtivreg composite_oppwt chc_hhi `covariate' (lc_composite_oppwt = `instrument'), re
-outreg2 using "${results}/table_s6.rtf", append dec(3) ctitle(alt-a)
+	outreg2 using "${results}/table_s6.rtf", append dec(3) ctitle(alt-a)
 
 local covariate cmi siteno mcaid_rate_b unins_rate_b zip_total_s_b povertyrate_market_b pct_nonwhite_market_b yr3 yr4 yr5
 local instrument lccb_frac_uninsured lccb_frac_medicaid
 xtivreg composite_oppwt chc_hhi `covariate' (lc_composite_oppwt = `instrument'), re
-outreg2 using "${results}/table_s6.rtf", append dec(3) ctitle(alt-b)
+	outreg2 using "${results}/table_s6.rtf", append dec(3) ctitle(alt-b)
 
 
 ****	Summary statistics
