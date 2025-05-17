@@ -7,7 +7,7 @@
 * ==============================================================================
 
 ****	Inputs: HHI data files derived from Do File #1 
-****	Outputs: List of "competitors' competitors" of each CHC (each row is a CHC-"competitors'-competitors" combination)
+****	Outputs: List of "competitors' competitors" of each CHC (each row is a CHC-"competitors' competitors" combination)
 
 ****	Estmated Run Time: 15 hours	****
 
