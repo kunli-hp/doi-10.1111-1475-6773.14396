@@ -118,7 +118,6 @@ forvalue i = 5/8{
 	}
 	
 destring year, replace
-replace chc_hhi = . if rule_market == 0
 
 **	Save
 save "${cdata}/hhi_14_18.dta", replace
