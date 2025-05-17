@@ -33,6 +33,7 @@ forvalues i = 4/8{
 	save "${cdata}/race_201`i'.dta", replace
 }
 
+*	Append data
 use "${cdata}/race_2014.dta", clear
 forvalues i = 5/8{
 	append using "${cdata}/race_201`i'.dta".dta, force
@@ -57,10 +58,12 @@ forvalues i = 7/8{
 	clear
 }
 
+*	Append data
 use "${cdata}/poverty_2014.dta"
 forvalues i = 5/8{
 	append using "${cdata}/poverty_201`i'.dta", force
 }
+
 
 **	Merge with existing age and sex composition file
 merge 1:1 zcta year using "${cdata}/acs_1418.dta", nogen
