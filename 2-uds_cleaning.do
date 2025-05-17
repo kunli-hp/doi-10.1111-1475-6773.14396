@@ -7,7 +7,7 @@
 * ==============================================================================
 
 ****	Data source: UDS 
-**		Multiple tables with a unique CHC identifer; Each row is a CHC
+**	Multiple tables with a unique CHC identifer; Each row is a CHC
 
 clear
 set more off
