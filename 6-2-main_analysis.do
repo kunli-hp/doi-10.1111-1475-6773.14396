@@ -65,7 +65,7 @@ xtivreg composite_oppwt chc_hhi `covariate' (lc_composite_oppwt = `instrument'),
 
 	
 ****	Validigy of IVs
-**	Geographic distribution of competitors' competitors (Table S5)
+**	Geographic distribution of competitors' competitors (Table S7)
 preserve
 
 	replace year = year - 1
